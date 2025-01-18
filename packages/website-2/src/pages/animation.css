@@ -99,30 +99,84 @@
   }
 
   .animation-cube .icon-rows-1 .icon-3 {
-    animation: iconUpDown 3s infinite;
+    transform: translateY(0)
+  }
+
+  .animation-cube .icon-rows-1 .icon-4 {
+    transform: translateY(0);
   }
   
-  .animation-cube .icon-rows-1 .icon-4 {
-    animation: iconUpDown 3s infinite 0.5s;
+  .animation-cube .icon-rows-1 .icon-4 .is-first {
+    animation: iconUp 3s infinite 0s;
+  }
+
+  .animation-cube .icon-rows-1 .icon-4 .is-second {
+    transform: translateY(-134px);
+    animation: iconDown 3s infinite 0s;
   }
 
   .animation-cube .icon-rows-2 .icon-1 {
-    animation: iconLeftRight 3s infinite 0.75s;
+    transform: translateX(0);
+  }
+
+  .animation-cube .icon-rows-2 .icon-1 .is-first {
+    animation: iconLeft 3s infinite 0.75s;
+  }
+
+  .animation-cube .icon-rows-2 .icon-1 .is-second {
+    animation: iconRight 3s infinite 0.75s;
   }
   
   .animation-cube .icon-rows-2 .icon-2 {
-    animation: iconLeftRight 3s infinite 1.25s;
+    transform: translateX(0);
+    /* animation: iconLeftRight 3s infinite 1.25s; */
   }
   
-  @keyframes iconUpDown {
+  @keyframes iconUp {
     0% {
-      transform: translateY(-135px);
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-134px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes iconDown {
+    0% {
+      transform: translateY(-134px);
     }
     50% {
       transform: translateY(0);
     }
     100% {
-      transform: translateY(-135px);
+      transform: translateY(-134px);
+    }
+  }
+
+  @keyframes iconLeft {
+    0% {
+      transform: translateX(-135px);
+    }
+    50% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-135px);
+    }
+  }
+
+  @keyframes iconRight {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-135px);
+    }
+    100% {
+      transform: translateX(0);
     }
   }
   
